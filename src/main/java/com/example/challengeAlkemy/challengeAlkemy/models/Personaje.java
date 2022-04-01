@@ -31,7 +31,9 @@ public class Personaje {
     private String historia;
 
     @ManyToMany
-    @JoinColumn(name = "cod_pels")
+    @JoinTable(name = "actua",
+            joinColumns = @JoinColumn(name = "FK_PERSONAJE", nullable = false),
+            inverseJoinColumns = @JoinColumn(name="FK_PELICULA", nullable = false))
     @Getter @Setter
     private List<Pelicula> peliculas;
 

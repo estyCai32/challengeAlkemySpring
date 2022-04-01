@@ -8,7 +8,7 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "PELICULAS")
+@Table(name = "Peliculas")
 public class Pelicula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +32,14 @@ public class Pelicula {
     @Getter @Setter
     private Integer clasificacion;
 
+
     @ManyToMany
-    @JoinColumn(name = "reparto")
+    @JoinTable(name = "actua",
+               joinColumns = @JoinColumn(name = "FK_PELICULA", nullable = false),
+               inverseJoinColumns = @JoinColumn(name="FK_PERSONAJE", nullable = false))
     @Getter @Setter
     private List<Personaje> personajes;
+
 
     @ManyToOne
     @JoinColumn(name = "cod_genero")
