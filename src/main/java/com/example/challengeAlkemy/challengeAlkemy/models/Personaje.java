@@ -36,8 +36,6 @@ public class Personaje {
     private List<Pelicula> peliculas;
 
 
-
-
     public Personaje() {
 
     }
