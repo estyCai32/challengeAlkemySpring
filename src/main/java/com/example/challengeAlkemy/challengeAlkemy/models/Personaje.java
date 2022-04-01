@@ -1,5 +1,7 @@
 package com.example.challengeAlkemy.challengeAlkemy.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,10 +32,7 @@ public class Personaje {
     @Getter @Setter
     private String historia;
 
-    @ManyToMany
-    @JoinTable(name = "actua",
-            joinColumns = @JoinColumn(name = "FK_PERSONAJE", nullable = false),
-            inverseJoinColumns = @JoinColumn(name="FK_PELICULA", nullable = false))
+    @ManyToMany(mappedBy = "personajes")
     @Getter @Setter
     private List<Pelicula> peliculas;
 

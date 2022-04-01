@@ -33,10 +33,10 @@ public class Pelicula {
     private Integer clasificacion;
 
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "actua",
-               joinColumns = @JoinColumn(name = "FK_PELICULA", nullable = false),
-               inverseJoinColumns = @JoinColumn(name="FK_PERSONAJE", nullable = false))
+               joinColumns = @JoinColumn(name = "FK_PELICULA", referencedColumnName = "id",  nullable = false),
+               inverseJoinColumns = @JoinColumn(name="FK_PERSONAJE", referencedColumnName = "id", nullable = false))
     @Getter @Setter
     private List<Personaje> personajes;
 

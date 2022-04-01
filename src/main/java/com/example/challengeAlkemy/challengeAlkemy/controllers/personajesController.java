@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class personajesController {
 
     @Autowired
-    PersonajeDao personajeDao;
+    private PersonajeDao personajeDao;
 
     @RequestMapping(value="prueba")
     public String prueba(){
@@ -24,6 +26,11 @@ public class personajesController {
         personajeDao.newPersonaje(p1);
 
         return personajeDao.getPersonaje();
+    }
+
+    @RequestMapping(value= "getPersonajes")
+    public List<Personaje> getAllPersonajes(){
+        return personajeDao.getAllPersonajes();
     }
 
 
