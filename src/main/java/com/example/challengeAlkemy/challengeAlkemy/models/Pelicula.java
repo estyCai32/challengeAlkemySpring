@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -26,7 +26,7 @@ public class Pelicula {
 
     @Column
     @Getter @Setter
-    private String fechaCreacion;
+    private Date fechaCreacion;
 
     @Column
     @Getter @Setter

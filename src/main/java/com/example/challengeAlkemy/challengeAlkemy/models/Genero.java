@@ -13,7 +13,7 @@ public class Genero {
 
     @Column
     @Getter @Setter
-    private Long nombre;
+    private String nombre;
 
 
 }
