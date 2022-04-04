@@ -1,5 +1,7 @@
 package com.example.challengeAlkemy.challengeAlkemy.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Peliculas")
+@EqualsAndHashCode
 public class Pelicula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +36,15 @@ public class Pelicula {
     private Integer clasificacion;
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
     @JoinTable(name = "actua",
                joinColumns = @JoinColumn(name = "FK_PELICULA", referencedColumnName = "id",  nullable = false),
                inverseJoinColumns = @JoinColumn(name="FK_PERSONAJE", referencedColumnName = "id", nullable = false))
+    @JsonIgnore
     @Getter @Setter
     private List<Personaje> personajes;
 

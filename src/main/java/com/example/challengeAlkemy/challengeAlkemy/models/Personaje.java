@@ -2,11 +2,13 @@ package com.example.challengeAlkemy.challengeAlkemy.models;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "PERSONAJES")
@@ -35,7 +37,6 @@ public class Personaje {
     @ManyToMany(mappedBy = "personajes")
     @Getter @Setter
     private List<Pelicula> peliculas;
-
 
 
 
