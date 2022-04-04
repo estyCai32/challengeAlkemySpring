@@ -6,6 +6,9 @@ values (1, "Infantil");
 insert into peliculas
 values (1,2010,8.5, "2001-08-11", "Cars", 1);
 
+insert into peliculas
+values (2,2015,6, "2010-10-11", "Cars 2", 1);
+
 INSERT INTO personajes
 VALUES (1, 7, "Personaje principal, campeon de la Copa Piston, cuchau", "Rayo Maqueen", 100);
 
@@ -14,6 +17,10 @@ VALUES (2, 7, "Mejor amigo Del rayo", "Mate", 240);
 
 insert into actua
 values(1,1);
+
+insert into actua
+values(2,1);
+
 
 insert into actua
 values(1,2);

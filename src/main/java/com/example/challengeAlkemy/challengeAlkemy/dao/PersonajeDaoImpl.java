@@ -30,7 +30,10 @@ public class PersonajeDaoImpl implements PersonajeDao {
 
     }
 
-    public void newPersonaje(Personaje p){
+    @Override
+    public void newPersonaje(Personaje p) {
         entityManager.merge(p);
     }
+
+
 }

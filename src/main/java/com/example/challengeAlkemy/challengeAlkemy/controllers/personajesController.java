@@ -3,6 +3,7 @@ package com.example.challengeAlkemy.challengeAlkemy.controllers;
 import com.example.challengeAlkemy.challengeAlkemy.dao.PersonajeDao;
 import com.example.challengeAlkemy.challengeAlkemy.models.Personaje;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,6 +34,10 @@ public class personajesController {
         return personajeDao.getAllPersonajes();
     }
 
+    @RequestMapping(value = "crearPersonaje")
+    public void registrarPersonaje(@RequestBody Personaje p){
+        personajeDao.newPersonaje(p);
+    }
 
 
 }
