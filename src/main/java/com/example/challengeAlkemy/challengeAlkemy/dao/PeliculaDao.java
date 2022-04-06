@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface PeliculaDao {
     List<Pelicula> getAllPeliculas();
+
 }
